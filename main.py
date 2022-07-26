@@ -45,8 +45,8 @@ images_coded= st.file_uploader("Choose files",accept_multiple_files=True)
 images=[]
 
 for i in images_coded:
-	image = StringIO(i.getvalue().decode("utf-8")) 
-	images.append(image)
+	image = StringIO(i.getvalue().decode("utf-8"))
+	images.append(image.read())
 
 all_diagnoses=[]
 xray_names =[]
