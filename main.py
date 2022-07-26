@@ -41,13 +41,13 @@ with st.beta_container():
   bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
   st.image(bio_image)
 
-images_coded= st.file_uploader("Choose files",accept_multiple_files=True)
+images_coded= st.file_uploader("Choose files to predict",accept_multiple_files=True)
 images=[i.name for i in images_coded]
 
 all_diagnoses=[]
 xray_names =[]
 
-if st.button('press for massive diagnosis'):
+if st.button('Press for massive diagnosis'):
 	for i,j  in zip(images_coded,images):
 	  diagnosis = (get_prediction  (i,model,labels))
 	  all_diagnoses.append(diagnosis)
@@ -62,3 +62,11 @@ if st.button('press for massive diagnosis'):
 		
 	df=pd.read_csv('table.csv')
 	st.dataframe(data=df,width = 500,height =500)
+	
+	st.download_button(
+	     label="Download the diagnosis",
+	     data=csv,
+	     file_name='table.csv',
+	     mime='text/csv',
+	 )
+
