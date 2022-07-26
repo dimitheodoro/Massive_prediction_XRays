@@ -8,7 +8,7 @@ import csv
 import pandas as pd
 import streamlit as st
 import cv2
-
+from io import StringIO
 
 
 model=load_model('Bioiatriki_project_binary.h5')
@@ -43,7 +43,10 @@ with st.beta_container():
 
 images_coded= st.file_uploader("Choose files",accept_multiple_files=True)
 images=[]
-st.write(images_coded[0].getvalue())
+
+stringio = StringIO(images_coded[0].getvalue().decode("utf-8"))
+string_data = stringio.read()
+st.write(string_data)
 
 # for i in images_coded:
 # 	image = i.getvalue()
