@@ -63,10 +63,10 @@ if st.button('Press for massive diagnosis'):
 	df=pd.read_csv('table.csv')
 	st.dataframe(data=df,width = 500,height =500)
 	
-	st.download_button(
-	     label="Download the diagnosis",
-	     data=csv,
-	     file_name='table.csv',
-	     mime='text/csv',
-	 )
+# 	st.download_button(
+# 	     label="Download the diagnosis",
+# 	     data=csv,
+# 	     file_name='table.csv',
+# 	     mime='text/csv',
+# 	 )
 
