@@ -47,7 +47,7 @@ xray_names =[]
 if st.button('press for massive diagnosis'):
 
 	for i in images:
-		print(os.path.join(os.getcwd(),i)
+	  print(os.path.join(os.getcwd(),i)
 	
 # 	  diagnosis = (get_prediction  (os.path.join(os.getcwd(),i),model,labels))
 # 	  all_diagnoses.append(diagnosis)
