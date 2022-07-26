@@ -40,7 +40,7 @@ with st.beta_container():
   st.image(bio_image)
 
 images= st.file_uploader("Choose files",accept_multiple_files=True)
-print(images)
+st.write(images)
 all_diagnoses=[]
 xray_names =[]
 
