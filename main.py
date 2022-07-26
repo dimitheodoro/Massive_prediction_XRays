@@ -8,6 +8,8 @@ import csv
 import pandas as pd
 import streamlit as st
 import cv2
+from io import StringIO 
+
 
 model=load_model('Bioiatriki_project_binary.h5')
 labels = {0: 'Normal', 1: 'Pathological'}
@@ -41,8 +43,9 @@ with st.beta_container():
 
 images_coded= st.file_uploader("Choose files",accept_multiple_files=True)
 images=[]
+
 for i in images_coded:
-	image = i.getvalue() 
+	image = StringIO(i.getvalue().decode("utf-8")) 
 	images.append(image)
 
 all_diagnoses=[]
