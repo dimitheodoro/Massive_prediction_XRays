@@ -7,6 +7,7 @@ import PIL
 import csv
 import pandas 
 import streamlit as st
+import cv2
 
 model=load_model('Bioiatriki_project_binary.h5')
 labels = {0: 'Normal', 1: 'Pathological'}
