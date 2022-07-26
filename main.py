@@ -48,10 +48,10 @@ all_diagnoses=[]
 xray_names =[]
 
 if st.button('press for massive diagnosis'):
-	for i in images:
+	for i,j  in zip(images_coded,images):
 	  diagnosis = (get_prediction  (i,model,labels))
 	  all_diagnoses.append(diagnosis)
-	  xray_names.append(i)
+	  xray_names.append(j[:-4])
 	  
 	table=list(zip(xray_names,all_diagnoses))
 
