@@ -43,9 +43,8 @@ with st.beta_container():
 
 images_coded= st.file_uploader("Choose files",accept_multiple_files=True)
 images=[]
+string_data = images_coded[0].read()
 
-stringio = StringIO(images_coded[0].getvalue().decode("utf-8"))
-string_data = stringio.read()
 st.write(string_data)
 
 # for i in images_coded:
