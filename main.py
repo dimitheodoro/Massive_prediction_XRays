@@ -8,7 +8,7 @@ import csv
 import pandas as pd
 import streamlit as st
 import cv2
-from io import StringIO 
+
 
 
 model=load_model('Bioiatriki_project_binary.h5')
@@ -45,8 +45,8 @@ images_coded= st.file_uploader("Choose files",accept_multiple_files=True)
 images=[]
 
 for i in images_coded:
-	image = StringIO(i.getvalue())
-	images.append(image.read())
+	image = i.getvalue()
+	images.append(image)
 
 all_diagnoses=[]
 xray_names =[]
