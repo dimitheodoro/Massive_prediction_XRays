@@ -64,5 +64,5 @@ if st.button('press for massive diagnosis'):
 		writer.writerow(['Patient','Diagnosis'])
 		writer.writerows(table)
 		
-# 	df=pd.read_csv('table.csv')
-# 	st.dataframe(data=df)
+	df=pd.read_csv('table.csv')
+	st.dataframe(data=df)
