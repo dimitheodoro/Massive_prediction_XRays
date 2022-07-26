@@ -43,26 +43,27 @@ with st.beta_container():
 
 images_coded= st.file_uploader("Choose files",accept_multiple_files=True)
 images=[]
+st.write(images_coded[0].getvalue())
 
 # for i in images_coded:
 # 	image = i.getvalue()
 # 	images.append(image)
 
-all_diagnoses=[]
-xray_names =[]
+# all_diagnoses=[]
+# xray_names =[]
 
-if st.button('press for massive diagnosis'):
-	for i in images_coded:
-	  diagnosis = (get_prediction  (i,model,labels))
-	  all_diagnoses.append(diagnosis)
-	  xray_names.append(i)
+# if st.button('press for massive diagnosis'):
+# 	for i in images_coded:
+# 	  diagnosis = (get_prediction  (i,model,labels))
+# 	  all_diagnoses.append(diagnosis)
+# 	  xray_names.append(i)
 	  
-	table=list(zip(xray_names,all_diagnoses))
+# 	table=list(zip(xray_names,all_diagnoses))
 
-	with open('table.csv', 'w', encoding='UTF8', newline='') as file:
-		writer = csv.writer(file)
-		writer.writerow(['Patient','Diagnosis'])
-		writer.writerows(table)
+# 	with open('table.csv', 'w', encoding='UTF8', newline='') as file:
+# 		writer = csv.writer(file)
+# 		writer.writerow(['Patient','Diagnosis'])
+# 		writer.writerows(table)
 		
-	df=pd.read_csv('table.csv')
-	st.dataframe(data=df)
+# 	df=pd.read_csv('table.csv')
+# 	st.dataframe(data=df)
