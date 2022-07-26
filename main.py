@@ -47,16 +47,18 @@ xray_names =[]
 if st.button('press for massive diagnosis'):
 
 	for i in images:
-	  diagnosis = (get_prediction  (os.path.join(os.getcwd(),i),model,labels))
-	  all_diagnoses.append(diagnosis)
-	  xray_names.append(i[:-4])
+		print(os.path.join(os.getcwd(),i)
+	
+# 	  diagnosis = (get_prediction  (os.path.join(os.getcwd(),i),model,labels))
+# 	  all_diagnoses.append(diagnosis)
+# 	  xray_names.append(i[:-4])
 	  
-	table=list(zip(xray_names,all_diagnoses))
+# 	table=list(zip(xray_names,all_diagnoses))
 
-	with open('table.csv', 'w', encoding='UTF8', newline='') as file:
-		writer = csv.writer(file)
-		writer.writerow(['Patient','Diagnosis'])
-		writer.writerows(table)
+# 	with open('table.csv', 'w', encoding='UTF8', newline='') as file:
+# 		writer = csv.writer(file)
+# 		writer.writerow(['Patient','Diagnosis'])
+# 		writer.writerows(table)
 		
-	df=pd.read_csv('table.csv')
-	st.dataframe(data=df)
+# 	df=pd.read_csv('table.csv')
+# 	st.dataframe(data=df)
