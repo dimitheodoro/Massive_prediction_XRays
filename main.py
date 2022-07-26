@@ -39,7 +39,8 @@ with st.beta_container():
   bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
   st.image(bio_image)
 
-images= st.file_uploader("Choose files",accept_multiple_files=True)
+images= st.file_uploader("Choose files",accept_multiple_files=True).getvalue()
+
 
 all_diagnoses=[]
 xray_names =[]
