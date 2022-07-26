@@ -5,7 +5,7 @@ import tensorflow as tf
 import os
 import PIL
 import csv
-import pandas 
+import pandas as pd
 import streamlit as st
 import cv2
 
