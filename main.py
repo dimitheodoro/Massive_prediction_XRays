@@ -61,4 +61,4 @@ if st.button('press for massive diagnosis'):
 		writer.writerows(table)
 		
 	df=pd.read_csv('table.csv')
-	st.dataframe(data=df)
+	st.dataframe(data=df,width = 500,height =500)
