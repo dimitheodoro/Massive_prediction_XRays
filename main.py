@@ -40,14 +40,14 @@ with st.beta_container():
   st.image(bio_image)
 
 images= st.file_uploader("Choose files",accept_multiple_files=True)
-
+print(images)
 all_diagnoses=[]
 xray_names =[]
 
-if st.button('press for massive diagnosis'):
+# if st.button('press for massive diagnosis'):
 
-	for i in images:
-	  print(os.path.join(os.getcwd(),i))
+# 	for i in images:
+	 
 	
 # 	  diagnosis = (get_prediction  (os.path.join(os.getcwd(),i),model,labels))
 # 	  all_diagnoses.append(diagnosis)
