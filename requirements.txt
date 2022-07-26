@@ -8,4 +8,4 @@ opencv-python-headless
 h5py==3.1.0
 click==7.1.2
 pandas
-csv
+python-csv
