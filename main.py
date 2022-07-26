@@ -43,7 +43,7 @@ with st.beta_container():
 
 images_coded= st.file_uploader("Choose files",accept_multiple_files=True)
 images=[]
-string_data = images_coded[0].read()
+string_data = images_coded[0].name
 
 st.write(string_data)
 
