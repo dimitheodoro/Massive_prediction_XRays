@@ -39,8 +39,11 @@ with st.beta_container():
   bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
   st.image(bio_image)
 
-images= st.file_uploader("Choose files",accept_multiple_files=True)
-images=[ i.getvalue() for i in images]
+images_coded= st.file_uploader("Choose files",accept_multiple_files=True)
+images=[]
+for i in images_coded:
+	image = i.getvalue() 
+	images.append(image)
 
 all_diagnoses=[]
 xray_names =[]
@@ -58,5 +61,5 @@ if st.button('press for massive diagnosis'):
 		writer.writerow(['Patient','Diagnosis'])
 		writer.writerows(table)
 		
-	df=pd.read_csv('table.csv')
-	st.dataframe(data=df)
+# 	df=pd.read_csv('table.csv')
+# 	st.dataframe(data=df)
